@@ -1,5 +1,9 @@
 #!/bin/env node
-var connect = require('connect');
+
+var connect = require('connect'),
+	http = require('http');
+
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-connect.createServer(connect.static(__dirname+'/build')).listen(port);
+var app = connect().use(connect.static('build'));
+http.createServer(app).listen(port);
 console.log("Server started on port "+port);
