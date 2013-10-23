@@ -1,15 +1,18 @@
 {
+  
   "name": "Nothing-to-hide-blog",
   "version": "1.0.0",
   "description": "Nothing To Hide devblog",
   "keywords": [
     "blog"
   ],
+
   "author": {
     "name": "Nicky Case",
-    "email": "ramr@example.org",
+    "email": "nick@ncase.me",
     "url":  "http://www.nothingtohide.cc/"
   },
+
   "homepage": "http://www.nothingtohide.cc/",
   "repository": {
     "type": "git",
@@ -33,4 +36,5 @@
 
   "private": true,
   "main": "index.js"
+
 }
