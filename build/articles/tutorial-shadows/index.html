@@ -76,7 +76,7 @@ var xhr = new XMLHttpRequest();
 xhr.open(&#39;<span class="caps">GET</span>&#39;, &quot;sprite.json&quot;, false);
 xhr.onreadystatechange = function(){
     if(xhr.readyState===4 &amp;&amp; xhr.status===200){
-        spritesheet = <span class="caps">JSON</span>.parse(xhr.responseText);
+        spritesheet = JSON.parse(xhr.responseText);
     }
 };
 xhr.send();
@@ -179,7 +179,7 @@ Player.update = function(){
 
 // Where the walls are
 var walls = [];
-var boxes = []; // <span class="caps">PROTOTYPE</span>.
+var boxes = []; // PROTOTYPE.
 function addBox(left,top,width,height){
 
     var right = left+width;
@@ -268,7 +268,7 @@ function renderForeground(){
     foreground.width = foreground.width;
     ctx.drawImage(foregroundImage,0,0);
 
-    // <span class="caps">YOU</span>
+    // YOU
     var frame = spritesheet.frames[Player.frame].frame;
     ctx.translate(Player.x,Player.y);
     ctx.scale(0.3,0.3);
