@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NCASE</title>
+    <atom:link href="http://www.ncase.me/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <link>http://www.ncase.me</link>
+    <description>The Stories &amp; Shenanigans of Someone Nicknamed Nick</description>
+    <pubDate>Fri, 25 Oct 2013 17:00:00 -0700</pubDate>
+    <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
+    <language>en</language>
+    <item>
+      <title>Making a Monaco-like Shadow Effect</title>
+      <link>http://www.ncase.me/articles/tutorial-shadows/</link>
+      <pubDate>Fri, 25 Oct 2013 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://www.ncase.me/articles/tutorial-shadows/</guid>
+      <author></author>
+      <description>&lt;p&gt;Step 1: Create the canvas&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-html&quot;&gt;&amp;lt;canvas id=&amp;quot;game&amp;quot; width=&amp;quot;600&amp;quot; height=&amp;quot;600&amp;quot;
+    style=&amp;quot;display:block; margin:auto; position:absolute; top:0; left:0px; bottom:0; right:0;&amp;quot;&amp;gt;
+&amp;lt;/canvas&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Step 2: Create the rest of the fucking game&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-html&quot;&gt;&amp;lt;body style=&amp;quot;background:#000;&amp;quot;&amp;gt;
+    &amp;lt;canvas id=&amp;quot;game&amp;quot; width=&amp;quot;600&amp;quot; height=&amp;quot;600&amp;quot;
+        style=&amp;quot;display:block; margin:auto; position:absolute; top:0; left:0px; bottom:0; right:0;&amp;quot;&amp;gt;
+    &amp;lt;/canvas&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;script&amp;gt;
+
+// Get canvas &amp;amp; drawing context
+var canvas = document.getElementById(&amp;quot;game&amp;quot;);
+var ctx = canvas.getContext(&amp;quot;2d&amp;quot;);
+
+// Layered canvasses
+var shadows = document.createElement(&amp;quot;canvas&amp;quot;);
+var background = document.createElement(&amp;quot;canvas&amp;quot;);
+var foreground = document.createElement(&amp;quot;canvas&amp;quot;);
+shadows.width = foreground.width = background.width = canvas.width;
+shadows.height = foreground.height = background.height = canvas.height;
+
+
+// Load images
+var backgroundImage = new Image();
+backgroundImage.src = &amp;quot;background.png&amp;quot;;
+backgroundImage.onload = function(){
+    background.getContext(&amp;quot;2d&amp;quot;).drawImage(backgroundImage,0,0);
+};
+
+var foregroundImage = new Image();
+foregroundImage.src = &amp;quot;foreground.png&amp;quot;;
+var spriteImage = new Image();
+spriteImage.src = &amp;quot;sprite.png&amp;quot;;
+
+
+
+// Load spritesheet
+var spritesheet;
+var xhr = new XMLHttpRequest();
+xhr.open(&amp;#39;GET&amp;#39;, &amp;quot;sprite.json&amp;quot;, false);
+xhr.onreadystatechange = function(){
+    if(xhr.readyState===4 &amp;amp;&amp;amp; xhr.status===200){
+        spritesheet = JSON.parse(xhr.responseText);
+    }
+};
+xhr.send();
+
+
+
+
+
+// Record Player position (relative to canvas)
+var Player = { x:100, y:100, vx:0, vy:0 };
+var Key = {};
+window.onkeydown = function(event){
+    switch(event.keyCode){
+        case 37: Key.left=true; break;
+        case 38: Key.up=true; break;
+        case 39: Key.right=true; break;
+        case 40: Key.down=true; break;
+    }
+}
+window.onkeyup = function(event){
+    switch(event.keyCode){
+        case 37: Key.left=false; break;
+        case 38: Key.up=false; break;
+        case 39: Key.right=false; break;
+        case 40: Key.down=false; break;
+    }
+}
+Player.face = 1;
+Player.frame = 0;
+Player.update = function(){
+
+    // Player face
+    if(Key.left &amp;amp;&amp;amp; !Key.right) Player.face = -1;
+    if(Key.right &amp;amp;&amp;amp; !Key.left) Player.face = 1;
+
+    // Player frame
+    if(Key.left || Key.right || Key.up || Key.down){
+        Player.frame = (Player.frame+1)%spritesheet.frames.length;
+    }else{
+        Player.frame = 0;
+    }
+
+    // Velocity player
+    var MAX_SPEED = 5;
+    Player.vx += (Key.left ? -3 : 0) + (Key.right ? 3 : 0);
+    Player.vy += (Key.up ? -3 : 0) + (Key.down ? 3 : 0);
+    Player.vx = Player.vx&amp;gt;MAX_SPEED ? MAX_SPEED : (Player.vx&amp;lt;-MAX_SPEED ? -MAX_SPEED : Player.vx); // Limit to 20 max
+    Player.vy = Player.vy&amp;gt;MAX_SPEED ? MAX_SPEED : (Player.vy&amp;lt;-MAX_SPEED ? -MAX_SPEED : Player.vy); // Limit to 20 max
+    Player.vx = (!Key.left &amp;amp;&amp;amp; !Key.right) ? Player.vx*0.5 : Player.vx; // Stop if no keys
+    Player.vy = (!Key.up &amp;amp;&amp;amp; !Key.down) ? Player.vy*0.5 : Player.vy; // Stop if no keys
+
+    // Move player
+    Player.x += Player.vx;
+    Player.y += Player.vy;
+
+    // Correct wall collision.
+    for(var i=0;i&amp;lt;boxes.length;i++){
+        var box = boxes[i];
+
+        // Is Intersecting
+        if( box.left&amp;lt;Player.x &amp;amp;&amp;amp; box.right&amp;gt;Player.x &amp;amp;&amp;amp; box.top&amp;lt;Player.y &amp;amp;&amp;amp; box.bottom&amp;gt;Player.y){
+
+            // Variables
+            var dx = Player.x-box.left;
+            var dy = Player.y-box.top;
+            var slope = box.height/box.width;
+
+            // Triangles
+            var topleft = ( dy &amp;lt; (box.width-dx)*slope );
+            var bottomright = !topleft;
+            var topright = ( dy &amp;lt; dx*slope );
+            var bottomleft = !topright;
+
+            // Sides
+            if(topleft&amp;amp;&amp;amp;bottomleft){
+                Player.x = box.left;
+            }else if(topright&amp;amp;&amp;amp;bottomright){
+                Player.x = box.right;
+            }else if(topleft&amp;amp;&amp;amp;topright){
+                Player.y = box.top;
+            }else if(bottomleft&amp;amp;&amp;amp;bottomright){
+                Player.y = box.bottom;
+            }
+
+        }
+
+    }
+
+    // And outside walls
+    var padding = 15;
+    if(Player.x&amp;lt;padding) Player.x=padding;
+    if(Player.y&amp;lt;padding) Player.y=padding;
+    if(Player.x&amp;gt;600-padding) Player.x=600-padding;
+    if(Player.y&amp;gt;600-padding) Player.y=600-padding;
+
+};
+
+
+
+
+// Where the walls are
+var walls = [];
+var boxes = []; // PROTOTYPE.
+function addBox(left,top,width,height){
+
+    var right = left+width;
+    var bottom = top+height;
+
+    var padding = 15;
+    boxes.push({
+        left:left-padding,
+        right:right+padding,
+        top:top-padding,
+        bottom:bottom+padding,
+        width:width+2*padding,
+        height:height+2*padding
+    });
+
+    walls = walls.concat([
+        { ax:left, ay:top, bx:right, by:top }, // top wall
+        { ax:left, ay:bottom, bx:right, by:bottom }, // bottom wall
+        { ax:left, ay:top, bx:left, by:bottom }, // left wall
+        { ax:right, ay:top, bx:right, by:bottom } // right wall
+    ]);
+
+}
+addBox(390,-32,17,173);
+addBox(-9,197,61,13);
+addBox(147,197,133,13);
+addBox(325,197,65,13);
+addBox(390,197,15,193);
+addBox(195,210,15,329);
+addBox(210,390,71,15);
+addBox(325,390,144,15);
+addBox(526,390,88,15);
+
+function drawShadowShape(wall,lightX,lightY,fillStyle){
+
+    var vector, vectorLength;
+    var ctx = shadows.getContext(&amp;#39;2d&amp;#39;);
+
+    // Begin drawing shadow
+    ctx.fillStyle = fillStyle;
+    ctx.beginPath();
+
+    // From the start of the wall to the end of the wall
+    ctx.moveTo(wall.ax,wall.ay);
+    ctx.lineTo(wall.bx,wall.by);
+
+    // From the end of the wall to a far enough distance away from the light source.
+    vector = { x:wall.bx-lightX, y:wall.by-lightY };
+    vectorLength = Math.sqrt(vector.x*vector.x+vector.y*vector.y);
+    vector.x *= 1000000/vectorLength;
+    vector.y *= 1000000/vectorLength;
+    ctx.lineTo(wall.bx+vector.x,wall.by+vector.y);
+
+    // From the start of the wall to a far enough distance away from the light source.
+    vector = { x:wall.ax-lightX, y:wall.ay-lightY };
+    vectorLength = Math.sqrt(vector.x*vector.x+vector.y*vector.y);
+    vector.x *= 1000000/vectorLength;
+    vector.y *= 1000000/vectorLength;
+    ctx.lineTo(wall.ax+vector.x,wall.ay+vector.y);
+
+    // Fill in the shadow
+    ctx.fill();
+
+}
+
+function renderShadows(){
+    shadows.width = shadows.width;
+    for(var i=0;i&amp;lt;walls.length;i++){
+        var wall = walls[i];
+
+        // Main opaque shadow
+        drawShadowShape(wall,Player.x,Player.y,&amp;quot;#000&amp;quot;);
+
+        // Fuzzy transparent shadows
+        drawShadowShape(wall,Player.x-10,Player.y,&amp;quot;rgba(0,0,0,0.2)&amp;quot;);
+        drawShadowShape(wall,Player.x,Player.y-10,&amp;quot;rgba(0,0,0,0.2)&amp;quot;);
+        drawShadowShape(wall,Player.x+10,Player.y,&amp;quot;rgba(0,0,0,0.2)&amp;quot;);
+        drawShadowShape(wall,Player.x,Player.y+10,&amp;quot;rgba(0,0,0,0.2)&amp;quot;);
+
+    }
+}
+
+function renderForeground(){
+
+    var ctx = foreground.getContext(&amp;quot;2d&amp;quot;);
+    foreground.width = foreground.width;
+    ctx.drawImage(foregroundImage,0,0);
+
+    // YOU
+    var frame = spritesheet.frames[Player.frame].frame;
+    ctx.translate(Player.x,Player.y);
+    ctx.scale(0.3,0.3);
+    ctx.scale(Player.face,1); // Player facing
+    ctx.translate(-90,-90);
+
+    var offset = spritesheet.frames[Player.frame].spriteSourceSize;
+    ctx.translate(offset.x,offset.y);
+    ctx.drawImage(
+        spriteImage,
+        frame.x,frame.y,frame.w,frame.h,
+        0,0,frame.w,frame.h
+    );
+
+}
+function renderBackground(){
+}
+
+// Draw function
+var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+function draw(){
+
+    // Move Player
+    Player.update();
+
+    // Render each layers
+    renderShadows();
+    renderForeground();
+    renderBackground();
+
+    // Render game
+    canvas.width = canvas.width;
+    ctx.drawImage(shadows,0,0);
+    ctx.globalCompositeOperation = &amp;quot;source-out&amp;quot;;
+    ctx.drawImage(foreground,0,0);
+    ctx.globalCompositeOperation = &amp;quot;destination-over&amp;quot;;
+    ctx.drawImage(background,0,0);
+
+    // Schedule next draw call
+    requestAnimationFrame(draw);
+
+}
+
+// Just wait a second
+setTimeout(draw,500);
+
+&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    <item>
+      <title>Show &amp; Tell #2 - Placeholder Pets</title>
+      <link>http://www.ncase.me/articles/show-and-tell-2/</link>
+      <pubDate>Fri, 18 Oct 2013 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://www.ncase.me/articles/show-and-tell-2/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;strong&gt;Goals for This Week (Oct 14-18)&lt;/strong&gt;   &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Prototype “crowdfunding with baked-in accountability” website. (accomplished)&lt;/li&gt;
+&lt;li&gt;Playable alpha for &lt;em&gt;Nothing to Hide&lt;/em&gt;. (incomplete)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Goals for Next Week (Oct 21-25)&lt;/strong&gt;    &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Playable beta for &lt;em&gt;Nothing to Hide&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Show &amp;amp; Tell blog for &lt;em&gt;Nothing to Hide&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Three months ago, I published 
+&lt;em&gt;&lt;a href=&quot;https://hacks.mozilla.org/2013/07/so-you-wanna-build-a-crowdfunding-site/&quot;&gt;So You Want To Build A Crowdfunding Site?&lt;/a&gt;&lt;/em&gt;
+on the Mozilla Hacks blog. 
+It&amp;#39;s a tutorial for making a basic crowdfunding site using Node.js &amp;amp; Balanced,
+and the demo website&amp;#39;s source code is readily forkable on Github.&lt;/p&gt;
+&lt;p&gt;Initially, my only goal for this week was to prototype a “crowdfunding with baked-in accountability” website.
+But because of the aforementioned tutorial, I just copied my old code, made small modifications, and my Progress Pledge prototype was complete.
+Only took one day. Not a good weekly goal, in hindsight.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/33MJGqu.png&quot; alt=&quot;&amp;quot;progress pledge prototype pic&amp;quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;If you&amp;#39;re wondering who Casey Cat is, I have a list of Placeholder Pets I use whenever I prototype a new thing.
+Other Placeholder Pets include Dance Monkey, Tiger Durden, and Lauren Ipsum, the quick brown fox.&lt;/p&gt;
+&lt;p&gt;The next logical step would be to turn this prototype into an actual crowdfunding campaign.
+All I needed now was a guinea pig - what would the campaign be going towards?
+Because this is about baked-in accountability in crowdfunding,
+I needed to test this on a medium-sized project that would take at least a few months to complete.
+I thought about the myriad of previouds projects I&amp;#39;ve dropped for some reason or other,
+and decided I would resurrect my relatively recent game project:&lt;/p&gt;
+&lt;div style=&quot;text-align:center&quot;&gt;
+    &lt;b&gt;Nothing to Hide, Nothing to Fear&lt;/b&gt;
+    &lt;br&gt;
+    a surveillance state survival horror
+    &lt;br&gt;&lt;br&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/Koa73xv.png&quot; alt=&quot;&amp;quot;nothing to hide campaign&amp;quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;By the way, I was pretty happy with that background.
+At 1280x800, it makes a great desktop wallpaper too!
+&lt;a href=&quot;http://i.imgur.com/uLBroAh.png&quot;&gt;Here you go, a CC Zero licensed wallpaper.&lt;/a&gt;
+I hope you have a 1280x800 screen.&lt;/p&gt;
+&lt;p&gt;In an ambition-fueled frenzy, I said, you know what? 
+The &lt;a href=&quot;https://rally.stopwatching.us/&quot;&gt;StopWatching.Us&lt;/a&gt; rally is on October 26th. Halloween is October 31st.
+If I go into crunch time for the next couple weeks,
+I could create a small polished demo of what the full game could be, and launch my crowdfunding campaign at the end of this month!&lt;/p&gt;
+&lt;p&gt;And crunch time I did.&lt;/p&gt;
+&lt;p&gt;I went from this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/qBccRAG.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;To this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/dn3SStS.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;To finally this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/0BF4GjG.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;All in the span of the last five days.&lt;/p&gt;
+&lt;p&gt;Of course, crunch time&amp;#39;s not healthy to do for too long at a stretch.
+I&amp;#39;m not trying to paint myself as a martyr for my work, because past some point, I was so tired I was unproductively scatterbrained.
+It was &lt;em&gt;hurting&lt;/em&gt; my work. That might be one reason why the alpha is still incomplete.&lt;/p&gt;
+&lt;p&gt;So, I&amp;#39;m taking this weekend off to unwind. Maybe do a bit of casual writing like I&amp;#39;m doing now.
+Next week, I&amp;#39;ll try to stick to a proper schedule. Sleep early, wake early, &lt;em&gt;and force myself to take breaks&lt;/em&gt;.
+(No, browsing through Hacker News or Reddit does not count.)&lt;/p&gt;
+&lt;p&gt;Speaking of which, here are my next week&amp;#39;s goals.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Goal: Show &amp;amp; Tell blog for Nothing to Hide.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I want &lt;em&gt;Nothing To Hide&amp;#39;s&lt;/em&gt; development to be completely open and transparent.
+I&amp;#39;m going to start with a Show &amp;amp; Tell blog for it, and post my progress there.
+(Such as the above sections and screenshots!)&lt;/p&gt;
+&lt;p&gt;In the future, I&amp;#39;d like to post more than just progress there.
+I want to also open up discussions on designing the game itself,
+tutorials for aspiring gamedevs,
+and my personal stories of having lived half my life in Singapore, the most Orwellian &lt;em&gt;developed&lt;/em&gt; country I know of.&lt;/p&gt;
+&lt;p&gt;Making this Show &amp;amp; Tell blog should take less than a day.
+After all, like the progress pledge prototype, I just need to take the existing code of the ncase.me website,
+make slight modifications, and publish it!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Goal: Playable beta for Nothing To Hide.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Right now, &lt;em&gt;Nothing to Hide&lt;/em&gt; is in half-alpha.
+Specifically, I&amp;#39;ve got most of the game engine, game mechanics, and story down for now.
+My game engine lets me create and modify levels very simply, by just modifying a JSON file in any text editor.
+A very, &lt;em&gt;very&lt;/em&gt; barebones level editor.&lt;/p&gt;
+&lt;p&gt;What&amp;#39;s left to do is to actually &lt;em&gt;use&lt;/em&gt; that level editor to create all the damn levels.
+Oh, and replace all the art and textures with actual art,
+because the only real art in the game so far is the redhead tomboy character.
+&lt;em&gt;That&amp;#39;s my standard for playable beta.&lt;/em&gt;
+All levels and art are more or less finalized, and all that&amp;#39;s left to do is polish &amp;amp; bug fixing.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/NxrzdpI.gif&quot; alt=&quot;&amp;quot;tomboy walk cycle&amp;quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I haven&amp;#39;t decided on the main character&amp;#39;s name yet.&lt;br&gt;Let&amp;#39;s call her Red Panda for now.&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>Show &amp; Tell #1 - Let There Be Light</title>
+      <link>http://www.ncase.me/articles/show-and-tell-1/</link>
+      <pubDate>Fri, 27 Sep 2013 17:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://www.ncase.me/articles/show-and-tell-1/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;strong&gt;Nothing to Hide, Nothing to Fear:&lt;/strong&gt; a surveillance state survival horror.&lt;/p&gt;
+&lt;p&gt;A new game project, started literally just this week!
+Next week, I&amp;#39;ll flesh out the line-of-sight mechanics, but for right now, I&amp;#39;ve programmed a &lt;a href=&quot;http://www.youtube.com/watch?v=hC7b6642AWM&quot;&gt;Monaco&lt;/a&gt;-inspired shadow-masking effect.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/leKDcEF.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Please ignore the placeholder catgirl.&lt;/p&gt;
+&lt;p&gt;I posted this GIF and other screenshots to /r/gamedev in their weekly &lt;a href=&quot;http://www.reddit.com/r/gamedev/comments/1naicc/screenshot_saturday_138_27_23_21/ccgux5a&quot;&gt;Screenshot Saturday thread&lt;/a&gt;.
+Out of curiosity, I asked them if they&amp;#39;d like a tutorial on how to make a similar shadow effect.&lt;/p&gt;
+&lt;p&gt;The response?&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/PF0TtrX.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Very well! I want to make this game as open and transparent as possible.
+Making tutorials and behind-the-scenes posts about once a week would be a good start, I think.
+The goal is for everything to be open: its development, its design, even its funding.&lt;/p&gt;
+&lt;p&gt;Fits the title of &lt;em&gt;Nothing to Hide&lt;/em&gt;, no?&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/bSPHtgP.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;P.S:&lt;/strong&gt; GIF was recorded using &lt;a href=&quot;http://www.cockos.com/licecap/&quot;&gt;LICEcap&lt;/a&gt;, an awesome open-source tool.
+I would have otherwise resorted to taking 15 screenshots a second and manually turning it into a GIF.
+Seriously.&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>

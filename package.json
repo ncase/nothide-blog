@@ -1,5 +1,5 @@
 {
-  "name": "OpenShift-Sample-App",
+  "name": "Nothing-to-hide-blog",
   "version": "1.0.0",
   "description": "OpenShift Sample Application",
   "keywords": [
@@ -25,7 +25,12 @@
   },
 
   "dependencies": {
+    "moment": "2.x",
+    "underscore": "1.4.x",
+    "typogr": "0.5.x",
+    "connect": "2.9.0"
   },
+
   "devDependencies": {},
   "bundleDependencies": [],
 
