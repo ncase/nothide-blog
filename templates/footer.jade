@@ -1,29 +1,32 @@
-div#contact
+div#newsletter.
+	<div style="background:#000; overflow:hidden; color:#fff;">
+		<div style="width:800px; margin:50px auto;">
+			<div style="font-size:90px; font-family:League; line-height:1.2em">
+				Join the Nothing Newsletter
+			</div>
+			<div style="margin-bottom:30px; position:relative;">
+				<form style="margin:0" action="https://tinyletter.com/nothingtohide" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/nothingtohide', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+					<input id="newsletter_email" type="email" placeholder="your@email.com" name="email" required="">
+					<input type="hidden" value="1" name="embed">
+					<button id="submit_button" name="submit">Subscribe</button>
+				</form>
+				<div style="font-size:18px; color:#777; margin-top:5px">
+					Every week, I'll give you the latest updates on <i>Nothing To Hide</i>'s open-source development. 
+					<br>
+					I need your honest feedback!
+				</div>
+			</div>
+		</div>
+	</div>
 
-	//--
-		| <script type="text/javascript">
-		| <!--
-		| var s="=b!isfg>#nbjmup;ojdlAodbtf/nf#?=ejw!je>#fnbjm#?=0ejw?=0b?";
-		| m=""; for (i=0; i<s.length; i++) m+=String.fromCharCode(s.charCodeAt(i)-1); document.write(m);
-		| //-->
-		| </script>
-		| <noscript>
-		| &#60&#97&#32&#104&#114&#101&#102&#61&#34&#109&#97&#105&#108&#116&#111&#58&#110&#105&#99&#107&#64&#110&#99&#97&#115&#101&#46&#109&#101&#34&#62&#60&#100&#105&#118&#32&#105&#100&#61&#34&#101&#109&#97&#105&#108&#34&#62&#60&#47&#100&#105&#118&#62&#60&#47&#97&#62&#13&#10&#13&#10&#13&#10&#13&#10&#13&#10
-		| </noscript>
-
-		a(href="/feed.xml")
-			div#rss
-		a(href="https://twitter.com/ncasenmare")
-			div#twitter
-		a(href="http://facebook.com/nutcasenightmare")
-			div#facebook
-		a(href="https://github.com/nutcasenightmare")
-			div#github
 div#site_info
-	| this site has <a href="http://creativecommons.org/publicdomain/zero/1.0/">zero rights reserved</a>
+	span(style="color:#000") Nothing to Hide was created by yours truly, 
+		a(href="http://ncase.me") NCASE
+	br
 	br
 	| <a href="https://github.com/nutcasenightmare/nothide-blog">fork this site on github</a>
 	br
+	| <a href="http://creativecommons.org/publicdomain/zero/1.0/">zero rights reserved</a>
 	br
-	span(style="color:#fff") yours truly, 
-		a(href="http://ncase.me") ncase
+	| <a href="/feed.xml">rss feed</a>
+
