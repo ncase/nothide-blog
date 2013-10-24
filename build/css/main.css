@@ -100,6 +100,8 @@ hr {
   margin: 1.6em 0;
 }
 
+
+
 /* page header */
 
 .header {
@@ -148,8 +150,96 @@ body.article-detail > header {
 
 
 
+/* social share links */
+div#social{
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 100px;
+  background: #f0f0e9;
+  padding: 25px 0;
+}
+div#social_header{
+  font-size: 35px;
+  color:#333;
+} 
+div#social_footer{
+  font-size: 15px;
+  color:#777;
+}
+div#social_footer a{
+  color: inherit;
+}
+div#social_buttons{
+  width:300px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 5px 0;
+}
+div#social_buttons > a{
+  display: block;
+  width:64px; height:64px;
+  float:left;
+  position: relative;
+  cursor: pointer;
+  margin-right: 14px;
+  -webkit-transition : top 0.1s linear;
+     -moz-transition : top 0.1s linear;
+      -ms-transition : top 0.1s linear;
+       -o-transition : top 0.1s linear;
+          transition : top 0.1s linear;
+}
+div#social_buttons > a:last-child{
+  margin-right: 0;
+}
+div#social_buttons > a:hover{
+  top:-2px;
+}
+div#social_buttons > a#facebook{ background: url(/img/icons/facebook.png); }
+div#social_buttons > a#twitter{ background: url(/img/icons/twitter.png); }
+div#social_buttons > a#gplus{ background: url(/img/icons/gplus.png); }
+div#social_buttons > a#tumblr{ background: url(/img/icons/tumblr.png); }
 
 
+
+
+/* comments */
+.juvia-topic > h3 {
+  display: none;
+}
+.juvia-topic input, .juvia-topic textarea{
+  border: 2px solid #ddd;
+}
+.juvia-topic form{
+  margin-top: 20px;
+}
+.juvia-input input{
+  font-size: 20px;
+  padding: 5px;
+  width: 750px;
+}
+.juvia-textarea-field textarea[name=content]{
+  width:100%;
+  padding: 5px;
+  font-size: 15px;
+}
+.juvia-submit-button input, .juvia-submitting-button input{
+  font-size: 30px;
+  background: #000;
+  display: block;
+  padding:15px 30px;
+  border-radius: 50px;
+  margin: 15px auto;
+  border:0;
+  text-transform: uppercase;
+  color:#fff;
+  cursor: pointer;
+}
+.juvia-submit-button input:hover, .juvia-submitting-button input:hover{
+  background: #333;
+}
+.juvia-comment .juvia-metadata{
+  background: #eee !important;
+}
 
 
 
@@ -158,7 +248,7 @@ body.article-detail > header {
 footer {
   margin-top: 3em;
   width:100%;
-  height:250px;
+  height:150px;
   padding-top: 50px;
   background: #000;
 }
@@ -206,7 +296,7 @@ footer #site_info a {
 /* article */
 
 .article {
-  margin: 3em 0 4em;
+  margin: 3em 0 3em 0;
 }
 
 .article a {

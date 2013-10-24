@@ -11,17 +11,17 @@
     <link rel="stylesheet" href="/css/banner.css">
   </head>
   <body class="article-detail"><a href="/">
-      <div id="ncase_header">
-        <div style="left: -37.5px"></div>
-        <div style="right: -37.5px"></div>
+      <div id="nothide_banner">
+        <div></div>
+        <div></div>
+        <div></div>
         <div>
           <div></div>
-        </div>
-        <div>
           <div></div>
         </div>
+        <div></div>
       </div></a>
-    <script src="/js/ncase_header.js"></script>
+    <script src="/js/nothide_banner.js"></script>
     <header class="header">
       <div class="content-wrap">
         <h1>Show &amp; Tell #1 - Let There Be Light</h1>
@@ -50,15 +50,20 @@ The goal is for everything to be open: its development, its design, even its&nbs
 I would have otherwise resorted to taking 15 screenshots a second and manually turning it into a <span class="caps">GIF</span>.&nbsp;Seriously.</p>
 </section>
         </article>
-        <div style="text-align:right; opacity:0.5">Share on: <a href="http://www.facebook.com/share.php?u=http%3A%2F%2Fnothingtohide.cc%2Farticles%2Fshow-and-tell-1%2F&amp;t=Show%20%26%20Tell%20%231%20-%20Let%20There%20Be%20Light">Facebook</a>&nbsp;<a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fnothingtohide.cc%2Farticles%2Fshow-and-tell-1%2F&amp;text=Show%20%26%20Tell%20%231%20-%20Let%20There%20Be%20Light&amp;via=ncasenmare">Twitter</a>&nbsp;<a href="https://plus.google.com/share?url=http%3A%2F%2Fnothingtohide.cc%2Farticles%2Fshow-and-tell-1%2F">G+</a>&nbsp;<a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fnothingtohide.cc%2Farticles%2Fshow-and-tell-1%2F&amp;name=Show%20%26%20Tell%20%231%20-%20Let%20There%20Be%20Light">Tumblr</a>
-        </div>
+      </div>
+      <div id="social">
+        <div id="social_header">SPREAD THE WORD</div>
+        <div id="social_buttons"><a id="facebook" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fnothingtohide.cc%2Farticles%2Fshow-and-tell-1%2F&amp;t=Show%20%26%20Tell%20%231%20-%20Let%20There%20Be%20Light"></a><a id="twitter" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fnothingtohide.cc%2Farticles%2Fshow-and-tell-1%2F&amp;text=Show%20%26%20Tell%20%231%20-%20Let%20There%20Be%20Light&amp;via=ncasenmare"></a><a id="gplus" href="https://plus.google.com/share?url=http%3A%2F%2Fnothingtohide.cc%2Farticles%2Fshow-and-tell-1%2F"></a><a id="tumblr" href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fnothingtohide.cc%2Farticles%2Fshow-and-tell-1%2F&amp;name=Show%20%26%20Tell%20%231%20-%20Let%20There%20Be%20Light"></a></div>
+        <div id="social_footer">no worries, these social buttons <a href="http://www.garron.me/en/blog/provide-share-buttons-without-exposing-your-visitors.html">do not track you</a></div>
+      </div>
+      <div class="content-wrap">
         <div id="comments">
           <script type="text/javascript" class="juvia">
             (function() {
                 var options = {
                     container   : '#comments',
                     site_key    : 'dtty8pk1u15bjw0mxv4qt6qj5rz9sv6',
-                    topic_key   : location.path,
+                    topic_key   : location.pathname,
                     topic_url   : location.href,
                     topic_title : document.title || location.href,
                     include_base: !window.Juvia,
@@ -106,21 +111,8 @@ I would have otherwise resorted to taking 15 screenshots a second and manually t
     </div>
     <footer>
       <div id="contact">
-        <script type="text/javascript">
-        <!--
-        var s="=b!isfg>#nbjmup;ojdlAodbtf/nf#?=ejw!je>#fnbjm#?=0ejw?=0b?";
-        m=""; for (i=0; i<s.length; i++) m+=String.fromCharCode(s.charCodeAt(i)-1); document.write(m);
-        //-->
-        </script>
-        <noscript>
-        &#60&#97&#32&#104&#114&#101&#102&#61&#34&#109&#97&#105&#108&#116&#111&#58&#110&#105&#99&#107&#64&#110&#99&#97&#115&#101&#46&#109&#101&#34&#62&#60&#100&#105&#118&#32&#105&#100&#61&#34&#101&#109&#97&#105&#108&#34&#62&#60&#47&#100&#105&#118&#62&#60&#47&#97&#62&#13&#10&#13&#10&#13&#10&#13&#10&#13&#10
-        </noscript><a href="/feed.xml">
-          <div id="rss"></div></a><a href="https://twitter.com/ncasenmare">
-          <div id="twitter"></div></a><a href="http://facebook.com/nutcasenightmare">
-          <div id="facebook"></div></a><a href="https://github.com/nutcasenightmare">
-          <div id="github"></div></a>
       </div>
-      <div id="site_info">this site has <a href="http://creativecommons.org/publicdomain/zero/1.0/">zero rights reserved</a><br><a href="https://github.com/nutcasenightmare/ncase.me">fork this site on github</a><br><br><span style="color:#fff">yours truly, nick</span></div>
+      <div id="site_info">this site has <a href="http://creativecommons.org/publicdomain/zero/1.0/">zero rights reserved</a><br><a href="https://github.com/nutcasenightmare/nothide-blog">fork this site on github</a><br><br><span style="color:#fff">yours truly, <a href="http://ncase.me">ncase</a></span></div>
     </footer>
   </body>
 </html>
