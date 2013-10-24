@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>NCASE</title>
-    <atom:link href="http://www.ncase.me/feed.xml" rel="self" type="application/rss+xml"></atom:link>
-    <link>http://www.ncase.me</link>
-    <description>The Stories &amp; Shenanigans of Someone Nicknamed Nick</description>
+    <title>Nothing To Hide</title>
+    <atom:link href="http://nothingtohide.cc/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <link>http://nothingtohide.cc</link>
+    <description>An open surveillance state survival horror game</description>
     <pubDate>Fri, 25 Oct 2013 17:00:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
     <item>
       <title>Making a Monaco-like Shadow Effect</title>
-      <link>http://www.ncase.me/articles/tutorial-shadows/</link>
+      <link>http://nothingtohide.cc/articles/tutorial-shadows/</link>
       <pubDate>Fri, 25 Oct 2013 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://www.ncase.me/articles/tutorial-shadows/</guid>
+      <guid isPermaLink="true">http://nothingtohide.cc/articles/tutorial-shadows/</guid>
       <author></author>
       <description>&lt;p&gt;Step 1: Create the canvas&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;lang-html&quot;&gt;&amp;lt;canvas id=&amp;quot;game&amp;quot; width=&amp;quot;600&amp;quot; height=&amp;quot;600&amp;quot;
@@ -302,9 +302,9 @@ setTimeout(draw,500);
     </item>
     <item>
       <title>Show &amp; Tell #2 - Placeholder Pets</title>
-      <link>http://www.ncase.me/articles/show-and-tell-2/</link>
+      <link>http://nothingtohide.cc/articles/show-and-tell-2/</link>
       <pubDate>Fri, 18 Oct 2013 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://www.ncase.me/articles/show-and-tell-2/</guid>
+      <guid isPermaLink="true">http://nothingtohide.cc/articles/show-and-tell-2/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;strong&gt;Goals for This Week (Oct 14-18)&lt;/strong&gt;   &lt;/p&gt;
 &lt;ul&gt;
@@ -394,9 +394,9 @@ All levels and art are more or less finalized, and all that&amp;#39;s left to do
     </item>
     <item>
       <title>Show &amp; Tell #1 - Let There Be Light</title>
-      <link>http://www.ncase.me/articles/show-and-tell-1/</link>
+      <link>http://nothingtohide.cc/articles/show-and-tell-1/</link>
       <pubDate>Fri, 27 Sep 2013 17:00:00 -0700</pubDate>
-      <guid isPermaLink="true">http://www.ncase.me/articles/show-and-tell-1/</guid>
+      <guid isPermaLink="true">http://nothingtohide.cc/articles/show-and-tell-1/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;strong&gt;Nothing to Hide, Nothing to Fear:&lt;/strong&gt; a surveillance state survival horror.&lt;/p&gt;
 &lt;p&gt;A new game project, started literally just this week!
