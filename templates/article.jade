@@ -16,6 +16,18 @@ block header
 block content
   article.article
     section.content!= typogr(page.html).typogrify()
+  div(style="text-align:right; opacity:0.5")
+    - var title = encodeURIComponent(page.title);
+    - var url = encodeURIComponent(locals.url + page.url);
+    - var desc = encodeURIComponent(page.title);
+    | Share on: 
+    a(href="http://www.facebook.com/share.php?u="+url+"&t="+title) Facebook
+    | &nbsp;
+    a(href="https://twitter.com/intent/tweet?url="+url+"&text="+desc+"&via=ncasenmare") Twitter
+    | &nbsp;
+    a(href="https://plus.google.com/share?url="+url) G+
+    | &nbsp;
+    a(href="http://www.tumblr.com/share/link?url="+url+"&description="+desc) Tumblr
 
 //--
   block prepend footer

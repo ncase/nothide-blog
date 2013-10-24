@@ -1,9 +1,9 @@
 {
   "locals": {
-    "url": "http://www.ncase.me",
-    "name": "NCASE",
-    "owner": "Someone",
-    "description": "The Stories & Shenanigans of Someone Nicknamed Nick"
+    "url": "http://nothingtohide.cc",
+    "name": "Nothing To Hide",
+    "owner": "Ncase",
+    "description": "An open surveillance state survival horror game"
   },
   "plugins": [
     "./plugins/paginator.coffee"
