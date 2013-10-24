@@ -21,15 +21,16 @@ html(lang='en')
         div(style="right: -37.5px")
         div: div
         div: div
-    script(src='/js/ncase_header.js')
+    script(src='/js/nothide_header.js')
 
     header.header
       div.content-wrap
         block header
-          div.logo
-            h1
-              a(href=locals.url)= locals.name
-            p.description= locals.description
+          //--
+            div.logo
+              h1
+                a(href=locals.url)= locals.name
+              p.description= locals.description
     
     div#content
       block content

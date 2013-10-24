@@ -199,13 +199,53 @@ div#social_buttons > a#tumblr{ background: url(/img/tumblr.png); }
 
 
 
+/* comments */
+.juvia-topic > h3 {
+  display: none;
+}
+.juvia-topic input, .juvia-topic textarea{
+  border: 2px solid #ddd;
+}
+.juvia-topic form{
+  margin-top: 20px;
+}
+.juvia-input input{
+  font-size: 20px;
+  padding: 5px;
+  width: 750px;
+}
+.juvia-textarea-field textarea[name=content]{
+  width:100%;
+  padding: 5px;
+  font-size: 15px;
+}
+.juvia-submit-button input, .juvia-submitting-button input{
+  font-size: 30px;
+  background: #000;
+  display: block;
+  padding:15px 30px;
+  border-radius: 50px;
+  margin: 15px auto;
+  border:0;
+  text-transform: uppercase;
+  color:#fff;
+  cursor: pointer;
+}
+.juvia-submit-button input:hover, .juvia-submitting-button input:hover{
+  background: #333;
+}
+.juvia-comment .juvia-metadata{
+  background: #eee !important;
+}
+
+
 
 /* page footer */
 
 footer {
   margin-top: 3em;
   width:100%;
-  height:250px;
+  height:150px;
   padding-top: 50px;
   background: #000;
 }
