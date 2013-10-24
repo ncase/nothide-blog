@@ -50,7 +50,57 @@ The goal is for everything to be open: its development, its design, even its&nbs
 I would have otherwise resorted to taking 15 screenshots a second and manually turning it into a <span class="caps">GIF</span>.&nbsp;Seriously.</p>
 </section>
         </article>
-        <div style="text-align:right; opacity:0.5">Share on: <a href="http://www.facebook.com/share.php?u=http%3A%2F%2Fnothingtohide.cc%2Farticles%2Fshow-and-tell-1%2F&amp;t=Show%20%26%20Tell%20%231%20-%20Let%20There%20Be%20Light">Facebook</a>&nbsp;<a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fnothingtohide.cc%2Farticles%2Fshow-and-tell-1%2F&amp;text=Show%20%26%20Tell%20%231%20-%20Let%20There%20Be%20Light&amp;via=ncasenmare">Twitter</a>&nbsp;<a href="https://plus.google.com/share?url=http%3A%2F%2Fnothingtohide.cc%2Farticles%2Fshow-and-tell-1%2F">G+</a>&nbsp;<a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fnothingtohide.cc%2Farticles%2Fshow-and-tell-1%2F&amp;description=Show%20%26%20Tell%20%231%20-%20Let%20There%20Be%20Light">Tumblr</a>
+        <div style="text-align:right; opacity:0.5">Share on: <a href="http://www.facebook.com/share.php?u=http%3A%2F%2Fnothingtohide.cc%2Farticles%2Fshow-and-tell-1%2F&amp;t=Show%20%26%20Tell%20%231%20-%20Let%20There%20Be%20Light">Facebook</a>&nbsp;<a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fnothingtohide.cc%2Farticles%2Fshow-and-tell-1%2F&amp;text=Show%20%26%20Tell%20%231%20-%20Let%20There%20Be%20Light&amp;via=ncasenmare">Twitter</a>&nbsp;<a href="https://plus.google.com/share?url=http%3A%2F%2Fnothingtohide.cc%2Farticles%2Fshow-and-tell-1%2F">G+</a>&nbsp;<a href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fnothingtohide.cc%2Farticles%2Fshow-and-tell-1%2F&amp;name=Show%20%26%20Tell%20%231%20-%20Let%20There%20Be%20Light">Tumblr</a>
+        </div>
+        <div id="comments">
+          <script type="text/javascript" class="juvia">
+            (function() {
+                var options = {
+                    container   : '#comments',
+                    site_key    : 'dtty8pk1u15bjw0mxv4qt6qj5rz9sv6',
+                    topic_key   : location.path,
+                    topic_url   : location.href,
+                    topic_title : document.title || location.href,
+                    include_base: !window.Juvia,
+                    include_css : !window.Juvia
+                };
+                
+                function makeQueryString(options) {
+                    var key, params = [];
+                    for (key in options) {
+                        params.push(
+                            encodeURIComponent(key) +
+                            '=' +
+                            encodeURIComponent(options[key]));
+                    }
+                    return params.join('&');
+                }
+                
+                function makeApiUrl(options) {
+                    // Makes sure that each call generates a unique URL, otherwise
+                    // the browser may not actually perform the request.
+                    if (!('_juviaRequestCounter' in window)) {
+                        window._juviaRequestCounter = 0;
+                    }
+                    
+                    var result =
+                        'http://comments-ncase.rhcloud.com/api/show_topic.js' +
+                        '?_c=' + window._juviaRequestCounter +
+                        '&' + makeQueryString(options);
+                    window._juviaRequestCounter++;
+                    return result;
+                }
+                
+                var s       = document.createElement('script');
+                s.async     = true;
+                s.type      = 'text/javascript';
+                s.className = 'juvia';
+                s.src       = makeApiUrl(options);
+                (document.getElementsByTagName('head')[0] ||
+                 document.getElementsByTagName('body')[0]).appendChild(s);
+            })();
+            
+          </script>
         </div>
       </div>
     </div>
@@ -71,6 +121,18 @@ I would have otherwise resorted to taking 15 screenshots a second and manually t
           <div id="github"></div></a>
       </div>
       <div id="site_info">this site has <a href="http://creativecommons.org/publicdomain/zero/1.0/">zero rights reserved</a><br><a href="https://github.com/nutcasenightmare/ncase.me">fork this site on github</a><br><br><span style="color:#fff">yours truly, nick</span></div>
-    </footer><!-- Piwik --><script type="text/javascript">var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik-ncase.rhcloud.com/" : "http://piwik-ncase.rhcloud.com/");document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript">try {var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);piwikTracker.trackPageView();piwikTracker.enableLinkTracking();} catch( err ) {}</script><noscript><p><img src="http://piwik-ncase.rhcloud.com/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript><!-- End Piwik Tracking Code -->
+    </footer>
   </body>
 </html>
+<script>
+  var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik-ncase.rhcloud.com/" : "http://piwik-ncase.rhcloud.com/");
+  document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+  try {
+    var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+    piwikTracker.trackPageView();
+    piwikTracker.enableLinkTracking();
+  }catch(err){}
+  
+  
+  
+</script>
