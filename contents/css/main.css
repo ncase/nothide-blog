@@ -100,6 +100,8 @@ hr {
   margin: 1.6em 0;
 }
 
+
+
 /* page header */
 
 .header {
@@ -148,6 +150,51 @@ body.article-detail > header {
 
 
 
+
+
+/* social share links */
+div#social{
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 100px;
+  background: #f0f0e9;
+  padding: 25px 0;
+}
+div#social_header{
+  font-size: 35px;
+  color:#333;
+} 
+div#social_footer{
+  font-size: 15px;
+  color:#777;
+}
+div#social_footer a{
+  color: inherit;
+}
+div#social_buttons{
+  width:300px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 5px 0;
+}
+div#social_buttons > a{
+  display: block;
+  width:64px; height:64px;
+  float:left;
+  position: relative;
+  cursor: pointer;
+  margin-right: 14px;
+}
+div#social_buttons > a:last-child{
+  margin-right: 0;
+}
+div#social_buttons > a:hover{
+  top:-2px;
+}
+div#social_buttons > a#facebook{ background: url(/img/facebook.png); }
+div#social_buttons > a#twitter{ background: url(/img/twitter.png); }
+div#social_buttons > a#gplus{ background: url(/img/gplus.png); }
+div#social_buttons > a#tumblr{ background: url(/img/tumblr.png); }
 
 
 
@@ -206,7 +253,7 @@ footer #site_info a {
 /* article */
 
 .article {
-  margin: 3em 0 4em;
+  margin: 3em 0 3em 0;
 }
 
 .article a {

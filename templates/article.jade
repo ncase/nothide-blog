@@ -14,69 +14,72 @@ block header
     =moment(page.metadata.date).zone("+0800").format('dddd, MMMM Do YYYY')
 
 block content
-  article.article
-    section.content!= typogr(page.html).typogrify()
+  div.content-wrap
+    article.article
+      section.content!= typogr(page.html).typogrify()
 
-  div(style="text-align:right; opacity:0.5")
+  div#social
     - var title = encodeURIComponent(page.title);
     - var url = encodeURIComponent(locals.url + page.url);
     - var desc = encodeURIComponent(page.title);
-    | Share on: 
-    a(href="http://www.facebook.com/share.php?u="+url+"&t="+title) Facebook
-    | &nbsp;
-    a(href="https://twitter.com/intent/tweet?url="+url+"&text="+desc+"&via=ncasenmare") Twitter
-    | &nbsp;
-    a(href="https://plus.google.com/share?url="+url) G+
-    | &nbsp;
-    a(href="http://www.tumblr.com/share/link?url="+url+"&name="+desc) Tumblr
+    div#social_header
+      | SPREAD THE WORD
+    div#social_buttons
+      a(id="facebook",href="http://www.facebook.com/share.php?u="+url+"&t="+title)
+      a(id="twitter",href="https://twitter.com/intent/tweet?url="+url+"&text="+desc+"&via=ncasenmare")
+      a(id="gplus",href="https://plus.google.com/share?url="+url)
+      a(id="tumblr",href="http://www.tumblr.com/share/link?url="+url+"&name="+desc)
+    div#social_footer
+      | no worries, these social buttons <a href="http://www.garron.me/en/blog/provide-share-buttons-without-exposing-your-visitors.html">do not track you</a>
 
-  div#comments
-    script(type="text/javascript",class="juvia").
-      (function() {
-          var options = {
-              container   : '#comments',
-              site_key    : 'dtty8pk1u15bjw0mxv4qt6qj5rz9sv6',
-              topic_key   : location.path,
-              topic_url   : location.href,
-              topic_title : document.title || location.href,
-              include_base: !window.Juvia,
-              include_css : !window.Juvia
-          };
+  div.content-wrap
+    div#comments
+      script(type="text/javascript",class="juvia").
+        (function() {
+            var options = {
+                container   : '#comments',
+                site_key    : 'dtty8pk1u15bjw0mxv4qt6qj5rz9sv6',
+                topic_key   : location.pathname,
+                topic_url   : location.href,
+                topic_title : document.title || location.href,
+                include_base: !window.Juvia,
+                include_css : !window.Juvia
+            };
 
-          function makeQueryString(options) {
-              var key, params = [];
-              for (key in options) {
-                  params.push(
-                      encodeURIComponent(key) +
-                      '=' +
-                      encodeURIComponent(options[key]));
-              }
-              return params.join('&');
-          }
+            function makeQueryString(options) {
+                var key, params = [];
+                for (key in options) {
+                    params.push(
+                        encodeURIComponent(key) +
+                        '=' +
+                        encodeURIComponent(options[key]));
+                }
+                return params.join('&');
+            }
 
-          function makeApiUrl(options) {
-              // Makes sure that each call generates a unique URL, otherwise
-              // the browser may not actually perform the request.
-              if (!('_juviaRequestCounter' in window)) {
-                  window._juviaRequestCounter = 0;
-              }
+            function makeApiUrl(options) {
+                // Makes sure that each call generates a unique URL, otherwise
+                // the browser may not actually perform the request.
+                if (!('_juviaRequestCounter' in window)) {
+                    window._juviaRequestCounter = 0;
+                }
 
-              var result =
-                  'http://comments-ncase.rhcloud.com/api/show_topic.js' +
-                  '?_c=' + window._juviaRequestCounter +
-                  '&' + makeQueryString(options);
-              window._juviaRequestCounter++;
-              return result;
-          }
+                var result =
+                    'http://comments-ncase.rhcloud.com/api/show_topic.js' +
+                    '?_c=' + window._juviaRequestCounter +
+                    '&' + makeQueryString(options);
+                window._juviaRequestCounter++;
+                return result;
+            }
 
-          var s       = document.createElement('script');
-          s.async     = true;
-          s.type      = 'text/javascript';
-          s.className = 'juvia';
-          s.src       = makeApiUrl(options);
-          (document.getElementsByTagName('head')[0] ||
-           document.getElementsByTagName('body')[0]).appendChild(s);
-      })();
+            var s       = document.createElement('script');
+            s.async     = true;
+            s.type      = 'text/javascript';
+            s.className = 'juvia';
+            s.src       = makeApiUrl(options);
+            (document.getElementsByTagName('head')[0] ||
+             document.getElementsByTagName('body')[0]).appendChild(s);
+        })();
 
 //--
   block prepend footer
