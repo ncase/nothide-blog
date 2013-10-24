@@ -1,73 +1,44 @@
-#ncase_header {
-  width: 100%; height: 150px;
-  /*min-width:900px;*/
-  overflow: hidden;
+#nothide_banner {
+  width: 100%; height: 300px;
   position: relative;
+  overflow: hidden;
+  background: #000;
 }
-#ncase_header div{
+#nothide_banner > div{
   position: absolute;
+  width:100%; height:100%;
 }
-#ncase_header > div:nth-child(1){
-  background: #000;
-  width:50%; height:100%;
-  left:-37.5px;
+#nothide_banner > div:nth-child(1){
+  background: url(/img/banner/bg.png);
 }
-#ncase_header > div:nth-child(2){
-  background: #000;
-  width:50%; height:100%;
-  right:-37.5px;
+#nothide_banner > div:nth-child(2){
+  background: url(/img/banner/city_back.png);
 }
-#ncase_header > div:nth-child(3){
-  
-  width:75px; height:150px;
-
-  left: -webkit-calc(50% - 37.5px);
-  left: -moz-calc(50% - 37.5px);
-  left: -ms-calc(50% - 37.5px);
-  left: -o-calc(50% - 37.5px);
-  left: calc(50% - 37.5px);
-
-  position: fixed;
-
+#nothide_banner > div:nth-child(3){
+  background: url(/img/banner/city_front.png);
 }
-#ncase_header > div:nth-child(3) > div{
-  border-width: 115px 50px;
-  border-color: transparent #000 transparent transparent;
-  border-style: solid;
-  left: -38px;
-  top: -115px;
+#nothide_banner > div:nth-child(4){}
+#nothide_banner > div:nth-child(4) > div:nth-child(1){
+  background: url(/img/banner/cam.png);
+  width:960px; height:300px;
+  margin: 0 auto;
 }
-#ncase_header > div:nth-child(4){
-  
-  width:75px; height:150px;
-
-  left: -webkit-calc(50% - 37.5px);
-  left: -moz-calc(50% - 37.5px);
-  left: -ms-calc(50% - 37.5px);
-  left: -o-calc(50% - 37.5px);
-  left: calc(50% - 37.5px);
-
-}
-#ncase_header > div:nth-child(4) > div{
-  border-width: 115px 50px;
-  border-color: transparent transparent transparent #000;
-  border-style: solid;
-  left: 12px;
-  top: 35px;
+#nothide_banner > div:nth-child(4) > div:nth-child(2){
+  position: absolute;
+  background: #cccccc;
+  width:50%; height:300px;
+  right:-450px; top:0;
 }
 
-#ncase_header:hover > div:nth-child(1){
-  background: #d40;
+#nothide_banner > div:nth-child(5){
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  -webkit-transition : opacity 0.1s linear;
+     -moz-transition : opacity 0.1s linear;
+      -ms-transition : opacity 0.1s linear;
+       -o-transition : opacity 0.1s linear;
+          transition : opacity 0.1s linear;
 }
-#ncase_header:hover > div:nth-child(2){
-  background: #d40;
-}
-#ncase_header:hover > div:nth-child(3) > div{
-  border-color: transparent #d40 transparent transparent;
-}
-#ncase_header:hover > div:nth-child(4) > div{
-  border-color: transparent transparent transparent #d40;
-}
-#ncase_header:hover {
-  /*background: #000;*/
+#nothide_banner > div:nth-child(5):hover{
+  opacity: 1;
 }

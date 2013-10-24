@@ -150,8 +150,6 @@ body.article-detail > header {
 
 
 
-
-
 /* social share links */
 div#social{
   text-align: center;
@@ -184,6 +182,11 @@ div#social_buttons > a{
   position: relative;
   cursor: pointer;
   margin-right: 14px;
+  -webkit-transition : top 0.1s linear;
+     -moz-transition : top 0.1s linear;
+      -ms-transition : top 0.1s linear;
+       -o-transition : top 0.1s linear;
+          transition : top 0.1s linear;
 }
 div#social_buttons > a:last-child{
   margin-right: 0;
@@ -191,10 +194,10 @@ div#social_buttons > a:last-child{
 div#social_buttons > a:hover{
   top:-2px;
 }
-div#social_buttons > a#facebook{ background: url(/img/facebook.png); }
-div#social_buttons > a#twitter{ background: url(/img/twitter.png); }
-div#social_buttons > a#gplus{ background: url(/img/gplus.png); }
-div#social_buttons > a#tumblr{ background: url(/img/tumblr.png); }
+div#social_buttons > a#facebook{ background: url(/img/icons/facebook.png); }
+div#social_buttons > a#twitter{ background: url(/img/icons/twitter.png); }
+div#social_buttons > a#gplus{ background: url(/img/icons/gplus.png); }
+div#social_buttons > a#tumblr{ background: url(/img/icons/tumblr.png); }
 
 
 
