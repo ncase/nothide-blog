@@ -16,6 +16,7 @@ block header
 block content
   article.article
     section.content!= typogr(page.html).typogrify()
+
   div(style="text-align:right; opacity:0.5")
     - var title = encodeURIComponent(page.title);
     - var url = encodeURIComponent(locals.url + page.url);
@@ -27,7 +28,55 @@ block content
     | &nbsp;
     a(href="https://plus.google.com/share?url="+url) G+
     | &nbsp;
-    a(href="http://www.tumblr.com/share/link?url="+url+"&description="+desc) Tumblr
+    a(href="http://www.tumblr.com/share/link?url="+url+"&name="+desc) Tumblr
+
+  div#comments
+    script(type="text/javascript",class="juvia").
+      (function() {
+          var options = {
+              container   : '#comments',
+              site_key    : 'dtty8pk1u15bjw0mxv4qt6qj5rz9sv6',
+              topic_key   : location.path,
+              topic_url   : location.href,
+              topic_title : document.title || location.href,
+              include_base: !window.Juvia,
+              include_css : !window.Juvia
+          };
+
+          function makeQueryString(options) {
+              var key, params = [];
+              for (key in options) {
+                  params.push(
+                      encodeURIComponent(key) +
+                      '=' +
+                      encodeURIComponent(options[key]));
+              }
+              return params.join('&');
+          }
+
+          function makeApiUrl(options) {
+              // Makes sure that each call generates a unique URL, otherwise
+              // the browser may not actually perform the request.
+              if (!('_juviaRequestCounter' in window)) {
+                  window._juviaRequestCounter = 0;
+              }
+
+              var result =
+                  'http://comments-ncase.rhcloud.com/api/show_topic.js' +
+                  '?_c=' + window._juviaRequestCounter +
+                  '&' + makeQueryString(options);
+              window._juviaRequestCounter++;
+              return result;
+          }
+
+          var s       = document.createElement('script');
+          s.async     = true;
+          s.type      = 'text/javascript';
+          s.className = 'juvia';
+          s.src       = makeApiUrl(options);
+          (document.getElementsByTagName('head')[0] ||
+           document.getElementsByTagName('body')[0]).appendChild(s);
+      })();
 
 //--
   block prepend footer
