@@ -30,9 +30,9 @@
       <section class="archive">
         <h2>Archive</h2>
         <ul>
-          <li style="height: 4.4em" class="year"><span style="line-height: 4.4em" class="year-label last">2013</span>
+          <li style="height: 6.6000000000000005em" class="year"><span style="line-height: 6.6000000000000005em" class="year-label last">2013</span>
             <ul>
-              <li style="height: 2.2em" class="month"><span style="line-height: 2.2em" class="month-label">October</span><a href="/articles/show-and-tell-2/" style="line-height: 2.2em">Show &amp; Tell #2 - Placeholder Pets</a>
+              <li style="height: 4.4em" class="month"><span style="line-height: 4.4em" class="month-label">October</span><a href="/articles/show-and-tell-3/" style="line-height: 2.2em">Show &amp; Tell #3 - Rally</a><a href="/articles/show-and-tell-2/" style="line-height: 2.2em">Show &amp; Tell #2 - Placeholder Pets</a>
               </li>
               <li style="height: 2.2em" class="month"><span style="line-height: 2.2em" class="month-label last">September</span><a href="/articles/show-and-tell-1/" style="line-height: 2.2em" class="last">Show &amp; Tell #1 - Let There Be Light</a>
               </li>
@@ -69,14 +69,17 @@
   </body>
 </html>
 <script>
-  var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik-ncase.rhcloud.com/" : "http://piwik-ncase.rhcloud.com/");
-  document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-  try {
-    var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
-    piwikTracker.trackPageView();
-    piwikTracker.enableLinkTracking();
-  }catch(err){}
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.nothingtohide.cc"]);
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
   
-  
-  
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik-ncase.rhcloud.com/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "1"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
 </script>
