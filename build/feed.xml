@@ -5,9 +5,91 @@
     <atom:link href="http://nothingtohide.cc/feed.xml" rel="self" type="application/rss+xml"></atom:link>
     <link>http://nothingtohide.cc</link>
     <description>An open surveillance state survival horror game</description>
-    <pubDate>Fri, 25 Oct 2013 17:00:00 -0700</pubDate>
+    <pubDate>Sat, 02 Nov 2013 00:00:00 -0700</pubDate>
     <generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
     <language>en</language>
+    <item>
+      <title>Show &amp; Tell #4 - Stone</title>
+      <link>http://nothingtohide.cc/articles/show-and-tell-4/</link>
+      <pubDate>Sat, 02 Nov 2013 00:00:00 -0700</pubDate>
+      <guid isPermaLink="true">http://nothingtohide.cc/articles/show-and-tell-4/</guid>
+      <author></author>
+      <description>&lt;p&gt;&lt;strong&gt;Goal for This Week (Oct 28 - Nov 1)&lt;/strong&gt;&lt;br&gt;In-browser playable tutorial for &lt;em&gt;Nothing to Hide&lt;/em&gt; by Halloween. (&lt;a href=&quot;http://prototype.nothingtohide.cc/&quot;&gt;&lt;em&gt;very&lt;/em&gt; accomplished&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Goal for Next Week (Nov 4 - Nov 8)&lt;/strong&gt;&lt;br&gt;New mechanics, new art, new story.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Accomplished: In-browser playable tutorial for &lt;em&gt;Nothing to Hide&lt;/em&gt; by Halloween.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/lpF1P0i.png&quot; alt=&quot;Propaganda mascot - Mr. Prism, The Eye Guy&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Polish. Playtest. Publish.&lt;/p&gt;
+&lt;p&gt;This week I drew and designed the tutorial levels,
+which taught the core mechanic and ended with a giant puzzle.
+I playtested with a few people in-person, and with dozens more online.
+On Halloween, I finally published the first &lt;a href=&quot;http://prototype.nothingtohide.cc/&quot;&gt;polished prototype&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://nothingtohide.cc/articles/show-and-tell-3/&quot;&gt;Last week&lt;/a&gt;, I had set out specific criteria to consider this goal accomplished.&lt;br&gt;Here&amp;#39;s how they turned out.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Create a polished tutorial.&lt;/strong&gt; Yep.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Playtest the full tutorial in person, thrice.&lt;/strong&gt;
+Thanks goes to my housemates, Justin, Barron, and Bill for being the first playtesters!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Make sure the game works cross-browser.&lt;/strong&gt;
+I was already developing in Chrome, and Firefox and Safari were also easy to support.
+I forgot about Opera until just now, and despite many attempts, I never got the game to work in Internet Explorer.
+Why? Because &lt;em&gt;Internet Explorer&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Share it online on Halloween morning.&lt;/strong&gt;
+I shared the game on my Twitter, Facebook, Facebook fan page, the Newgrounds frontpage,
+the r/IndieGaming subreddit, and r/gamedev&amp;#39;s Feedback Friday thread.
+According to my open-source analytics tool Piwik, I reached over 1000+ unique views.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Get feedback, attention, and possible collaborators.&lt;/strong&gt;
+ On the prototype&amp;#39;s web page, I had included a short, open-ended feedback survey
+ using &lt;a href=&quot;https://www.firebase.com/&quot;&gt;Firebase&lt;/a&gt; as a quick and lazy backend.
+ A hundred people responded, and that&amp;#39;s just through my site!
+ Even more left me feedback through Newgrounds and Reddit.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I&amp;#39;ve reached a great milestone, but it&amp;#39;s also a stepping stone.&lt;br&gt;Here&amp;#39;s what&amp;#39;s next.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Goal: New controls, new puzzles, new story.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/tWv6XAS.png&quot; alt=&quot;Stumbling upon some servers&quot;&gt;&lt;/p&gt;
+&lt;p&gt;This week, I actually implement the feedback I&amp;#39;ve gotten.
+I&amp;#39;m not just giving lip service when I say they&amp;#39;ve been greatly helpful in shaping the future design.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Controls.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The community came up with brilliant ideas that never even &lt;em&gt;crossed&lt;/em&gt; my mind.
+Some levels required too much precision, and my first thought was to have a key to slow down.
+But other gamedevs gave a better solution - mouse controls.
+Not only does that give the player more precision, it &lt;em&gt;simplifies&lt;/em&gt; the controls,
+and allows for more engaging puzzle mechanics later on.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Next week: Switch over to mouse interface.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Puzzles.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Many playtesters said - cool clever core mechanic, and it&amp;#39;s a good &lt;em&gt;tutorial&lt;/em&gt;, but we need to see more.
+But their feedback went further. They came up with new puzzle ideas such as mirrors, &amp;quot;dummy&amp;quot; versions of you, throwing the cameras,
+moving walls and doors, panel activations, etc.
+I can prototype a few of these, then settle on just &lt;em&gt;one&lt;/em&gt; extra mechanic
+for the demo that launches with the crowdfunding campaign.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Next week: Prototype a few new mechanics, settle on one.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Story.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The big missing thing. There was no story at &lt;em&gt;all&lt;/em&gt; in the prototype.
+But even then, people were quite curious about the main character - who is she, why does she have that bindle bag?
+My goal by next week is to add this to the game, in some form.
+In films, the saying goes “show, don&amp;#39;t tell.” In games, it&amp;#39;s ”do, don&amp;#39;t show.”
+I will try my best to &lt;em&gt;not&lt;/em&gt; present the story via just cutscenes.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Next week: Add narrative to the game.&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;All in all... open development &lt;em&gt;works&lt;/em&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/d5qeyRJ.png&quot; alt=&quot;An act of terrorism&quot;&gt;&lt;/p&gt;
+&lt;p&gt;When I began &lt;em&gt;Nothing To Hide&lt;/em&gt;, I expected that developing openly would make bug-finding and content creation easier,
+but I didn&amp;#39;t expect the community to help &lt;em&gt;shape the core mechanics and controls!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Later in November, I plan to launch that Progress Pledge campaign with Nothing To Hide.
+Combine the benefits of developing openly with crowdfunding openly,
+and I think that may thrust openness + business into the mainstream.&lt;/p&gt;
+&lt;p&gt;This week didn&amp;#39;t just skyrocket my confidence how openness can help developers, it was a point of &lt;em&gt;personal growth&lt;/em&gt; for me.
+I have a hard time of letting go of my own ideas and embracing others&amp;#39;.
+I want to be &lt;em&gt;the one&lt;/em&gt; in control.
+But as I develop more openly, I will learn to let go.&lt;/p&gt;
+&lt;p&gt;Milestones are stepping stones.&lt;br&gt;But they&amp;#39;re not set in stone.&lt;/p&gt;
+</description>
+    </item>
     <item>
       <title>Show &amp; Tell #3 - Rally</title>
       <link>http://nothingtohide.cc/articles/show-and-tell-3/</link>
