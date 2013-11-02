@@ -91,95 +91,80 @@ But as I develop more openly, I will learn to let go.&lt;/p&gt;
 </description>
     </item>
     <item>
-      <title>Show &amp; Tell #3 - Rally</title>
+      <title>Show &amp; Tell #3 - Every Bomb Has A Silver Lining</title>
       <link>http://nothingtohide.cc/articles/show-and-tell-3/</link>
       <pubDate>Fri, 25 Oct 2013 17:00:00 -0700</pubDate>
       <guid isPermaLink="true">http://nothingtohide.cc/articles/show-and-tell-3/</guid>
       <author></author>
       <description>&lt;p&gt;&lt;strong&gt;Goals for This Week (Oct 21-25)&lt;/strong&gt;    &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Playable beta for &lt;em&gt;Nothing to Hide&lt;/em&gt;. (not even anywhere close)&lt;/li&gt;
 &lt;li&gt;Show &amp;amp; Tell blog for &lt;em&gt;Nothing to Hide&lt;/em&gt;. (&lt;a href=&quot;http://nothingtohide.cc/&quot;&gt;accomplished&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Playable beta for &lt;em&gt;Nothing to Hide&lt;/em&gt;. (not even &lt;em&gt;anywhere&lt;/em&gt; close)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Goals for Next Week (Oct 28 - Nov 1)&lt;/strong&gt;    &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Playable beta for &lt;em&gt;Nothing to Hide&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Show &amp;amp; Tell blog for &lt;em&gt;Nothing to Hide&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;In-browser playable tutorial for &lt;em&gt;Nothing to Hide&lt;/em&gt; by Halloween.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;Three months ago, I published 
-&lt;em&gt;&lt;a href=&quot;https://hacks.mozilla.org/2013/07/so-you-wanna-build-a-crowdfunding-site/&quot;&gt;So You Want To Build A Crowdfunding Site?&lt;/a&gt;&lt;/em&gt;
-on the Mozilla Hacks blog. 
-It&amp;#39;s a tutorial for making a basic crowdfunding site using Node.js &amp;amp; Balanced,
-and the demo website&amp;#39;s source code is readily forkable on Github.&lt;/p&gt;
-&lt;p&gt;Initially, my only goal for this week was to prototype a “crowdfunding with baked-in accountability” website.
-But because of the aforementioned tutorial, I just copied my old code, made small modifications, and my Progress Pledge prototype was complete.
-Only took one day. Not a good weekly goal, in hindsight.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/33MJGqu.png&quot; alt=&quot;&amp;quot;progress pledge prototype pic&amp;quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;If you&amp;#39;re wondering who Casey Cat is, I have a list of Placeholder Pets I use whenever I prototype a new thing.
-Other Placeholder Pets include Dance Monkey, Tiger Durden, and Lauren Ipsum, the quick brown fox.&lt;/p&gt;
-&lt;p&gt;The next logical step would be to turn this prototype into an actual crowdfunding campaign.
-All I needed now was a guinea pig - what would the campaign be going towards?
-Because this is about baked-in accountability in crowdfunding,
-I needed to test this on a medium-sized project that would take at least a few months to complete.
-I thought about the myriad of previouds projects I&amp;#39;ve dropped for some reason or other,
-and decided I would resurrect my relatively recent game project:&lt;/p&gt;
-&lt;div style=&quot;text-align:center&quot;&gt;
-    &lt;b&gt;Nothing to Hide, Nothing to Fear&lt;/b&gt;
-    &lt;br&gt;
-    a surveillance state survival horror
-    &lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/Koa73xv.png&quot; alt=&quot;&amp;quot;nothing to hide campaign&amp;quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;By the way, I was pretty happy with that background.
-At 1280x800, it makes a great desktop wallpaper too!
-&lt;a href=&quot;http://i.imgur.com/uLBroAh.png&quot;&gt;Here you go, a CC Zero licensed wallpaper.&lt;/a&gt;
-I hope you have a 1280x800 screen.&lt;/p&gt;
-&lt;p&gt;In an ambition-fueled frenzy, I said, you know what? 
-The &lt;a href=&quot;https://rally.stopwatching.us/&quot;&gt;StopWatching.Us&lt;/a&gt; rally is on October 26th. Halloween is October 31st.
-If I go into crunch time for the next couple weeks,
-I could create a small polished demo of what the full game could be, and launch my crowdfunding campaign at the end of this month!&lt;/p&gt;
-&lt;p&gt;And crunch time I did.&lt;/p&gt;
-&lt;p&gt;I went from this:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/qBccRAG.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;To this:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/dn3SStS.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;To finally this:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/0BF4GjG.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;All in the span of the last five days.&lt;/p&gt;
-&lt;p&gt;Of course, crunch time&amp;#39;s not healthy to do for too long at a stretch.
-I&amp;#39;m not trying to paint myself as a martyr for my work, because past some point, I was so tired I was unproductively scatterbrained.
-It was &lt;em&gt;hurting&lt;/em&gt; my work. That might be one reason why the alpha is still incomplete.&lt;/p&gt;
-&lt;p&gt;So, I&amp;#39;m taking this weekend off to unwind. Maybe do a bit of casual writing like I&amp;#39;m doing now.
-Next week, I&amp;#39;ll try to stick to a proper schedule. Sleep early, wake early, &lt;em&gt;and force myself to take breaks&lt;/em&gt;.
-(No, browsing through Hacker News or Reddit does not count.)&lt;/p&gt;
-&lt;p&gt;Speaking of which, here are my next week&amp;#39;s goals.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Accomplished: Show &amp;amp; Tell blog for Nothing to Hide.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Check out &lt;em&gt;Nothing To Hide&lt;/em&gt;&amp;#39;s new site at &lt;a href=&quot;http://nothingtohide.cc/&quot;&gt;NothingToHide.cc!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/pI5dvvX.png&quot; alt=&quot;&amp;quot;NothingToHide.cc Site Banner&amp;quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;My original plan was to
+“&lt;em&gt;take the existing code of the ncase.me website, make slight modifications, and publish it&lt;/em&gt;.”&lt;/p&gt;
+&lt;p&gt;I went further.
+&lt;em&gt;Everything&lt;/em&gt; had to be open.&lt;/p&gt;
+&lt;p&gt;I used &lt;a href=&quot;http://piwik.org/&quot;&gt;Piwik&lt;/a&gt; instead of Google Analytics, because I don&amp;#39;t want Google (and PRISM) tracking my viewers.
+I used &lt;a href=&quot;https://github.com/phusion/juvia&quot;&gt;Juvia&lt;/a&gt; instead of Disqus for comments, because of privacy concerns with Disqus.
+Both Piwik and Juvia are as fully-featured as their proprietary counterparts,
+and in some aspects, they&amp;#39;re actually better!
+Soon, I&amp;#39;ll give this NCASE Show &amp;amp; Tell blog the same open treatment.&lt;/p&gt;
+&lt;p&gt;The best part? Doing all this was &lt;em&gt;easy&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;It didn&amp;#39;t take much to escape the grasp of centralized services,
+thanks to &lt;a href=&quot;https://www.openshift.com/&quot;&gt;OpenShift&lt;/a&gt;, an open-source PaaS.
+OpenShift has this great feature called Quickstart, which lets you create a new, self-hosted app in minutes.
+As luck would have it, a &lt;a href=&quot;https://github.com/openshift-quickstart/juvia-example&quot;&gt;Juvia Quickstart&lt;/a&gt;
+and a &lt;a href=&quot;https://github.com/openshift/piwik-openshift-quickstart&quot;&gt;Piwik Quickstart&lt;/a&gt; already exist.&lt;/p&gt;
+&lt;p&gt;That was a fun day of exploring new open source tech.&lt;br&gt;Followed by a few days of scrambling over Nothing To Hide.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Goal: Show &amp;amp; Tell blog for Nothing to Hide.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;I want &lt;em&gt;Nothing To Hide&amp;#39;s&lt;/em&gt; development to be completely open and transparent.
-I&amp;#39;m going to start with a Show &amp;amp; Tell blog for it, and post my progress there.
-(Such as the above sections and screenshots!)&lt;/p&gt;
-&lt;p&gt;In the future, I&amp;#39;d like to post more than just progress there.
-I want to also open up discussions on designing the game itself,
-tutorials for aspiring gamedevs,
-and my personal stories of having lived half my life in Singapore, the most Orwellian &lt;em&gt;developed&lt;/em&gt; country I know of.&lt;/p&gt;
-&lt;p&gt;Making this Show &amp;amp; Tell blog should take less than a day.
-After all, like the progress pledge prototype, I just need to take the existing code of the ncase.me website,
-make slight modifications, and publish it!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Goal: Playable beta for Nothing To Hide.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Right now, &lt;em&gt;Nothing to Hide&lt;/em&gt; is in half-alpha.
-Specifically, I&amp;#39;ve got most of the game engine, game mechanics, and story down for now.
-My game engine lets me create and modify levels very simply, by just modifying a JSON file in any text editor.
-A very, &lt;em&gt;very&lt;/em&gt; barebones level editor.&lt;/p&gt;
-&lt;p&gt;What&amp;#39;s left to do is to actually &lt;em&gt;use&lt;/em&gt; that level editor to create all the damn levels.
-Oh, and replace all the art and textures with actual art,
-because the only real art in the game so far is the redhead tomboy character.
-&lt;em&gt;That&amp;#39;s my standard for playable beta.&lt;/em&gt;
-All levels and art are more or less finalized, and all that&amp;#39;s left to do is polish &amp;amp; bug fixing.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/NxrzdpI.gif&quot; alt=&quot;&amp;quot;tomboy walk cycle&amp;quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;I haven&amp;#39;t decided on the main character&amp;#39;s name yet.&lt;br&gt;Let&amp;#39;s call her Red Panda for now.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Failed: Playable beta for Nothing to Hide.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;First, the good news. I&amp;#39;ve done quite a bit of work on &lt;em&gt;Nothing To Hide&lt;/em&gt; this week,
+and right now, it both looks and sounds &lt;em&gt;awesome&lt;/em&gt;.
+Here&amp;#39;s a gameplay GIF:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/BljOvAV.gif&quot; alt=&quot;&amp;quot;Gameplay GIF&amp;quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The bad news is this is still nowhere close to &amp;#39;playable beta&amp;#39;, at least by my definition.&lt;/p&gt;
+&lt;p&gt;Although I&amp;#39;ve been making great progress on &lt;em&gt;Nothing To Hide&lt;/em&gt; in the last couple weeks,
+I&amp;#39;m still failing at the goals I set out.
+I had planned to finish the alpha by last week, and failed.
+What did I do then? I set a new goal to complete the &lt;em&gt;beta&lt;/em&gt; by this week, and again, failed.
+My plan was still to launch the demo and campaign before the &lt;a href=&quot;https://rally.stopwatching.us/&quot;&gt;Stop Watching Us&lt;/a&gt; rally.
+Which is today.&lt;/p&gt;
+&lt;p&gt;I &lt;em&gt;might&lt;/em&gt; be underestimating how much time I need.&lt;/p&gt;
+&lt;p&gt;But as I like to say, every bomb has a silver lining.
+By recording and recognizing the gap between my goals and achievements, I get better at planning projects.
+Drastically scaling back, here is my one, small, realistic goal for the upcoming week.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Goal: In-browser playable tutorial for Nothing to Hide by Halloween.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;My previous goals for &lt;em&gt;Nothing To Hide&lt;/em&gt; were vague, like &amp;#39;finish alpha&amp;#39; or &amp;#39;finish beta&amp;#39;.
+Not this goal. Here&amp;#39;s the specific criteria for what I want accomplished by Halloween, and why.
+It&amp;#39;s in a &lt;em&gt;numbered&lt;/em&gt; list, which as we all know, is the most serious of lists.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Create a polished tutorial&lt;/strong&gt;, to show off mainly the mechanics and art style.
+Story should be minimal, and only hinted at.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Playtest the full tutorial in person, thrice.&lt;/strong&gt;
+I have quite a few roommates in this hacker house who have not seen &lt;em&gt;Nothing To Hide&lt;/em&gt; yet.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Make sure the game works cross-browser.&lt;/strong&gt;
+While the final game will most likely be a downloadable, this is important just for the next few steps.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Share it online on Halloween morning.&lt;/strong&gt;
+Specifically, a Newgrounds frontpage news post, r/gamedev&amp;#39;s Feedback Friday, my social media, and maybe a few forums.
+&lt;em&gt;Emphasize it is a polished prototype, not even an alpha.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Get feedback, attention, and possible collaborators.&lt;/strong&gt;
+Invite people to sign up for my newsletter for updates,
+and make an open call for other artists to team up with. (one musician and one voice actress?)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Mmm. Making numbered lists sure helps create a false sense of productivity!
+All I need now is to set my desktop background to a &amp;#39;motivational&amp;#39; picture.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/gIKdChb.jpg&quot; alt=&quot;&amp;quot;Ship, you fool&amp;quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Yeah, that works.&lt;/p&gt;
 </description>
     </item>
     <item>
