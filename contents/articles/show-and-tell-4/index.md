@@ -29,7 +29,7 @@ Here's how they turned out.
 1. **Create a polished tutorial.** Yep.
   
 2. **Playtest the full tutorial in person, thrice.**
-   Thanks goes to my housemates, Justin, Barron, and Bill for being the first playtesters!
+   Thanks goes to my housemates, Kirill, Justin, Barron, and Bill for being the first playtesters!
 
 3. **Make sure the game works cross-browser.**
    I was already developing in Chrome, and Firefox and Safari were also easy to support.
@@ -42,10 +42,10 @@ Here's how they turned out.
    According to my open-source analytics tool Piwik, I reached over 1000+ unique views.
   
 5. **Get feedback, attention, and possible collaborators.**
-	On the prototype's web page, I had included a short, open-ended feedback survey
-	using [Firebase](https://www.firebase.com/) as a quick and lazy backend.
-	A hundred people responded, and that's just through my site!
-	Even more left me feedback through Newgrounds and Reddit.
+   On the prototype's web page, I had included a short, open-ended feedback survey
+   using [Firebase](https://www.firebase.com/) as a quick and lazy backend.
+   A hundred people responded, and that's just through my site!
+   Even more left me feedback through Newgrounds and Reddit.
 
 I've reached a great milestone, but it's also a stepping stone.    
 Here's what's next.
