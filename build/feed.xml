@@ -42,15 +42,15 @@ the r/IndieGaming subreddit, and r/gamedev&amp;#39;s Feedback Friday thread.
 According to my open-source analytics tool Piwik, I reached over 1000+ unique views.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Get feedback, attention, and possible collaborators.&lt;/strong&gt;
-On the prototype&amp;#39;s web page, I had included a short, open-ended feedback survey
-using &lt;a href=&quot;https://www.firebase.com/&quot;&gt;Firebase&lt;/a&gt; as a quick and lazy backend.
-A hundred people responded, and that&amp;#39;s just through my site!
-Even more left me feedback through Newgrounds and Reddit.&lt;/p&gt;
+ On the prototype&amp;#39;s web page, I had included a short, open-ended feedback survey
+ using &lt;a href=&quot;https://www.firebase.com/&quot;&gt;Firebase&lt;/a&gt; as a quick and lazy backend.
+ A hundred people responded, and that&amp;#39;s just through my site!
+ Even more left me feedback through Newgrounds and Reddit.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;I&amp;#39;ve reached a great milestone, but it&amp;#39;s also a stepping stone.&lt;br&gt;Here&amp;#39;s what&amp;#39;s next.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Goal: New controls, new puzzles, new story.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Goal: New mechanics, new art, new story.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/tWv6XAS.png&quot; alt=&quot;Stumbling upon some servers&quot;&gt;&lt;/p&gt;
 &lt;p&gt;This week, I actually implement the feedback I&amp;#39;ve gotten.
 I&amp;#39;m not just giving lip service when I say they&amp;#39;ve been greatly helpful in shaping the future design.&lt;/p&gt;
@@ -68,6 +68,12 @@ moving walls and doors, panel activations, etc.
 I can prototype a few of these, then settle on just &lt;em&gt;one&lt;/em&gt; extra mechanic
 for the demo that launches with the crowdfunding campaign.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Next week: Prototype a few new mechanics, settle on one.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Art.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Another thing playtesters pointed out was the inconsistency in art style.
+The backgrounds were grim, dirty, and had no outlines. In contrast, the main character was cute, cartoony, and outlined.
+I don&amp;#39;t have many art assets right now, which is good!
+That means I can experiment and figure out what art direction to really go for.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Next week: Find new art direction, and re-skin the game with it.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Story.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;The big missing thing. There was no story at &lt;em&gt;all&lt;/em&gt; in the prototype.
 But even then, people were quite curious about the main character - who is she, why does she have that bindle bag?
@@ -88,6 +94,8 @@ I have a hard time of letting go of my own ideas and embracing others&amp;#39;.
 I want to be &lt;em&gt;the one&lt;/em&gt; in control.
 But as I develop more openly, I will learn to let go.&lt;/p&gt;
 &lt;p&gt;Milestones are stepping stones.&lt;br&gt;But they&amp;#39;re not set in stone.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;EDIT 11/6: Added section about art in my weekly goal.&lt;/p&gt;
 </description>
     </item>
     <item>

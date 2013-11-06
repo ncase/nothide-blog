@@ -42,17 +42,17 @@ Here's how they turned out.
    According to my open-source analytics tool Piwik, I reached over 1000+ unique views.
   
 5. **Get feedback, attention, and possible collaborators.**
-   On the prototype's web page, I had included a short, open-ended feedback survey
-   using [Firebase](https://www.firebase.com/) as a quick and lazy backend.
-   A hundred people responded, and that's just through my site!
-   Even more left me feedback through Newgrounds and Reddit.
+	On the prototype's web page, I had included a short, open-ended feedback survey
+	using [Firebase](https://www.firebase.com/) as a quick and lazy backend.
+	A hundred people responded, and that's just through my site!
+	Even more left me feedback through Newgrounds and Reddit.
 
 I've reached a great milestone, but it's also a stepping stone.    
 Here's what's next.
 
 ---
 
-**Goal: New controls, new puzzles, new story.**
+**Goal: New mechanics, new art, new story.**
 
 ![Stumbling upon some servers](http://i.imgur.com/tWv6XAS.png)
 
@@ -78,6 +78,15 @@ I can prototype a few of these, then settle on just *one* extra mechanic
 for the demo that launches with the crowdfunding campaign.
 
 *Next week: Prototype a few new mechanics, settle on one.*
+
+**Art.**
+
+Another thing playtesters pointed out was the inconsistency in art style.
+The backgrounds were grim, dirty, and had no outlines. In contrast, the main character was cute, cartoony, and outlined.
+I don't have many art assets right now, which is good!
+That means I can experiment and figure out what art direction to really go for.
+
+*Next week: Find new art direction, and re-skin the game with it.*
 
 **Story.**
 
@@ -109,3 +118,7 @@ But as I develop more openly, I will learn to let go.
 
 Milestones are stepping stones.    
 But they're not set in stone.
+
+---
+
+EDIT 11/6: Added section about art in my weekly goal.
